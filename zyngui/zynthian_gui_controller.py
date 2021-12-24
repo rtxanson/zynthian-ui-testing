@@ -525,7 +525,7 @@ class zynthian_gui_controller:
 					self.inverted=True
 				if (isinstance(zctrl.midi_cc, int) and zctrl.midi_cc > 0):
 					self.max_value = 127
-					self.step = 1
+					self.step = round(zctrl.value_range / self.n_values)
 					val = zctrl.value-zctrl.value_min
 				else:
 					self.selmode = True
